@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EersteConsoleApp.Opdrachten;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,7 @@ namespace EersteConsoleApp
     {
         static void Main(string[] args)
         {
-            new Opdracht_1().Start();
+            new Opdracht_2().Start();
         }
     }
 }
