@@ -24,6 +24,31 @@ namespace EersteConsoleApp.Opdrachten
             return age;
         }
 
+        bool isOverEighteen(int age)
+        {
+            return age >= 18;
+        }
+
+        void PrintAgeCategory(int age)
+        {
+            bool adult = isOverEighteen(age);
+
+            if (adult && age < 30)
+            {
+                Console.WriteLine("You're a young adult. You're in your 20s");
+            }
+
+            if (adult && age >= 30 && age < 50)
+            {
+                Console.WriteLine("You're getting older. Start cooking up on that grill unc");
+            }
+
+            if (adult && age >= 50)
+            {
+                Console.WriteLine("You're getting older. Do your dih still work?");
+            }
+        }
+
         public void Start()
         {
             Console.WriteLine("Enter your birthdate");
@@ -35,24 +60,21 @@ namespace EersteConsoleApp.Opdrachten
             {
 
                 int age = CalculateAge(birthdate);
-                
+
                 // Console.WriteLine(age);
 
-                if (age < 12)
+                Console.WriteLine($"You're {age} years old.");
+                
+                if (isOverEighteen(age))
                 {
-                    Console.WriteLine($"You're a child, you're {age} years old. You can't vote nor drive.");
+                    Console.WriteLine("You can legally vote");
+                }
+                else
+                {
+                    Console.WriteLine("You CAN'T legally vote");
                 }
 
-                if (age > 12 && age < 18)
-                {
-                    Console.WriteLine($"You're a teen, you're {age} years old. You're technically allowed to vote and drive in some countries.");
-                }
-
-                if (age >= 18)
-                {
-                    Console.WriteLine($"You're a legal adult, you're {age} years old. You can vote AND drive. (atleast if you have a license)");
-                }
-
+                PrintAgeCategory(age);
                 return;
             }
 
