@@ -81,6 +81,7 @@ namespace EersteConsoleApp.Opdrachten
             Console.Clear();
             Console.WriteLine("Not a valid birthday.");
             Start();
+            return;
         }
     }
 }
