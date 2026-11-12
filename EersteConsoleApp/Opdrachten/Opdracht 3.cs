@@ -56,6 +56,7 @@ namespace EersteConsoleApp.Opdrachten
             Console.Clear();
             Console.WriteLine("Geen bestaande weer");
             Start();
+            return;
         }
     }
 }

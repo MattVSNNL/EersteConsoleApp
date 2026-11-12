@@ -43,6 +43,7 @@ namespace EersteConsoleApp.Opdrachten
                 Console.WriteLine("Not a valid number. Please try again.");
                 Console.WriteLine();
                 Start();
+                return;
             }
 
             Console.WriteLine();
@@ -58,6 +59,7 @@ namespace EersteConsoleApp.Opdrachten
                 Console.WriteLine("Not a valid number. Please try again.");
                 Console.WriteLine();
                 Start();
+                return;
             }
 
             Console.WriteLine();

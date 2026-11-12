@@ -18,7 +18,6 @@ namespace EersteConsoleApp
 
             string age = Console.ReadLine();
             Console.WriteLine($"Your name is {name} and you're {age} years old.");
-
         }
     }
 }
