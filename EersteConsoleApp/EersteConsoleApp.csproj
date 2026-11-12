@@ -47,6 +47,7 @@
     <Compile Include="Opdrachten\Opdracht 2.cs" />
     <Compile Include="Opdrachten\Opdracht 3.cs" />
     <Compile Include="Opdrachten\Opdracht 4.cs" />
+    <Compile Include="Opdrachten\Opdracht 5.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
