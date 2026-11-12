@@ -38,6 +38,7 @@ namespace EersteConsoleApp.Opdrachten
                     Console.Clear();
                     Console.WriteLine("Temperatuur moet een nummer zijn");
                     Start();
+                    return;
                 }
 
                 if (temperatuur >= 20)

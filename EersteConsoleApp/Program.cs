@@ -11,7 +11,7 @@ namespace EersteConsoleApp
     {
         static void Main(string[] args)
         {
-            new Opdracht_5().Start();
+            new Opdracht_6().Start();
         }
     }
 }
