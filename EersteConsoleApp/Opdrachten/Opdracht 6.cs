@@ -4,89 +4,72 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EersteConsoleApp.Opdrachten
+internal class Opdracht_6
 {
-    internal class Opdracht_6
+
+    public void Start()
     {
+        Console.WriteLine("To what number do you want to guess?");
 
-        (bool valid, int number) IsValidNumber(string str)
+        string numberStr = Console.ReadLine();
+        int number;
+
+        if (!int.TryParse(numberStr, out number))
         {
-            int num;
-
-            if (!int.TryParse(str, out num))
-            {
-                return (false, num);
-            }
-
-            return (true, num);
+            Console.Clear();
+            Console.WriteLine("Not a valid number. Please try again.\n");
+            Start();
+            return;
         }
 
-        public void Start()
+        if (number <= 1)
         {
-            Console.WriteLine("To what number do you want to guess?");
+            Console.Clear();
+            Console.WriteLine("Number needs to be higher than 1. Please try again.\n");
+            Start();
+            return;
+        }
 
-            string numberStr = Console.ReadLine();
-            var numberVar = IsValidNumber(numberStr);
-            int number = numberVar.number;
+        int randomNum = new Random().Next(1, number + 1);
+        int errors = 0;
 
-            if (!numberVar.valid)
+        Console.WriteLine("\nOkay, I got a number. Guess!");
+
+        while (true)
+        {
+
+            string guessedNumberStr = Console.ReadLine();
+            int guessedNumber;
+
+            if (!int.TryParse(guessedNumberStr, out guessedNumber))
             {
-                Console.Clear();
                 Console.WriteLine("Not a valid number. Please try again.\n");
-                Start();
-                return;
+                continue;
             }
 
-            if (number <= 1)
+            if (guessedNumber != randomNum)
             {
-                Console.Clear();
-                Console.WriteLine("Number needs to be higher than 1. Please try again.\n");
-                Start();
-                return;
-            }
+                Console.WriteLine("\nWrong. Try again :D");
+                errors += 1;
 
-            int randomNum = new Random().Next(1, number + 1);
-            int errors = 0;
-
-            Console.WriteLine("\nOkay, I got a number. Guess!");
-
-            while (true)
-            {
-
-                string guessedNumberStr = Console.ReadLine();
-                var gNumberVar = IsValidNumber(guessedNumberStr);
-                int guessedNumber = gNumberVar.number;
-
-                if (!gNumberVar.valid)
+                if (errors >= 3)
                 {
-                    Console.WriteLine("Not a valid number. Please try again.\n");
-                    continue;
-                }
+                    string result = "Lower";
 
-                if (guessedNumber != randomNum)
-                {
-                    Console.WriteLine("\nWrong. Try again :D");
-                    errors += 1;
-
-                    if (errors >= 3)
+                    if (randomNum > guessedNumber)
                     {
-                        string result = "Lower";
-
-                        if (randomNum > guessedNumber)
-                        {
-                            result = "Higher";
-                        }
-
-                        Console.WriteLine($"(Hint: {result})");
+                        result = "Higher";
                     }
 
-                    continue;
+                    Console.WriteLine($"(Hint: {result})");
                 }
 
-                Console.WriteLine("\nCorrect! Congrats. You won.");
-                break;
+                continue;
             }
 
+            Console.WriteLine("\nCorrect! Congrats. You won.");
+            break;
         }
+
     }
 }
