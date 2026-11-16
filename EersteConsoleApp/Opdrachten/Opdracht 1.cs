@@ -4,20 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EersteConsoleApp
+internal class Opdracht_1
 {
-    internal class Opdracht_1
+    public void Start()
     {
-        public void Start() {
-            Console.WriteLine("What is your name?");
+        Console.WriteLine("What is your name?");
 
-            string name = Console.ReadLine();
-            Console.WriteLine($"Hello {name}");
+        string name = Console.ReadLine();
+        Console.WriteLine($"Hello {name}");
 
-            Console.WriteLine("What is your age?");
+        Console.WriteLine("What is your age?");
 
-            string age = Console.ReadLine();
-            Console.WriteLine($"Your name is {name} and you're {age} years old.");
-        }
+        string age = Console.ReadLine();
+        Console.WriteLine($"Your name is {name} and you're {age} years old.");
     }
 }
