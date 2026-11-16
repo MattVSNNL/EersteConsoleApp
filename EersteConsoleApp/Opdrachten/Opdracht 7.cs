@@ -18,6 +18,7 @@ internal class Opdracht_7
         }
 
         foreach (int number in numbers)
+
         {
             results[number - 1] += 1;
         }
@@ -26,7 +27,7 @@ internal class Opdracht_7
         {
             //int num = i + 1;
             double resultNum = (double)results[i - 1] / numbers.Count;
-            Console.WriteLine($"{i} was rolled {results[i - 1]} ({resultNum:P0})"); // P0 is apparently a way to format numbers to a percentage, can use P2 if you want 10.00%
+            Console.WriteLine($"{i} was rolled {results[i - 1]} times ({resultNum:P0})"); // P0 is apparently a way to format numbers to a percentage, can use P2 if you want 10.00%
         }
 
         int highestCount = Array.IndexOf(results, results.Max()) + 1;

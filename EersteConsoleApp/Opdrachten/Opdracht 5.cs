@@ -42,7 +42,7 @@ internal class Opdracht_5
 
         for (int i = 1; i <= limit; i++)
         {
-            Console.WriteLine(table * i);
+            Console.WriteLine($"{table}x{i} = {table * i}");
         }
 
         return;

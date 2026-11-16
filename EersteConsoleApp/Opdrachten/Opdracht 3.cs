@@ -14,12 +14,13 @@ internal class Opdracht_3
         if (chosenWeather == null)
         {
             Console.WriteLine("Wat voor weer is het?");
+            Console.WriteLine("Opties: Zonnig, bewolkt of regent");
             string weer = Console.ReadLine().ToLower();
 
             if (!IsValidWeather(weer))
             {
                 Console.Clear();
-                Console.WriteLine("Geen bestaande weer");
+                Console.WriteLine("Deze weer bestaat niet");
                 Start();
                 return;
             }
@@ -29,9 +30,8 @@ internal class Opdracht_3
 
         Console.WriteLine("Wat is de temperatuur buiten?");
         string temperatuurStr = Console.ReadLine();
-        int temperatuur;
 
-        if (!int.TryParse(temperatuurStr, out temperatuur))
+        if (!int.TryParse(temperatuurStr, out int temperatuur))
         {
             Console.WriteLine("Temperatuur moet een nummer zijn");
             Start();
@@ -87,7 +87,7 @@ internal class Opdracht_3
     {
         foreach(string weather in weren)
         {
-            if (weer == weather)
+            if (weather == weer)
             {
                 return true;
             }

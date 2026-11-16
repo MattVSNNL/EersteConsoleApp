@@ -49,8 +49,9 @@ internal class Opdracht_6
 
             if (guessedNumber != randomNum)
             {
-                Console.WriteLine("\nWrong. Try again :D");
                 errors += 1;
+                Console.WriteLine("\nWrong. Try again :D");
+                Console.WriteLine($"Aantal pogingen: {errors}");
 
                 if (errors >= 3)
                 {
