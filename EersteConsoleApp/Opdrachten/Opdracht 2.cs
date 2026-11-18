@@ -66,10 +66,12 @@ internal class Opdracht_2
 
     private Dictionary<string, (bool willLose, string[] neededLocations)> locations = new Dictionary<string, (bool, string[])>
     {
-        ["hallway"] = (false, new[] { "living room", "none" }),
+        ["hallway"] = (false, new[] { "living room", "breaker box", "none" }),
         ["bedroom"] = (true, new[] { "hallway" }),
         ["kitchen"] = (true, new[] { "hallway" }),
         ["living room"] = (false, new[] { "hallway", "balcony" }),
+        ["breaker box"] = (false, new[] { "hallway" }),
+        ["hospital"] = (true, new[] { "breaker box" }),
         ["balcony"] = (false, new[] { "living room" }),
         ["bathroom"] = (false, new[] { "living room" }),
     };

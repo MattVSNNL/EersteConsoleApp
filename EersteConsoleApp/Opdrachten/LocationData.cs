@@ -16,7 +16,7 @@ internal class LocationData
 
         ["hallway"] = () => {
             Console.WriteLine("Now you're in the hallway.");
-            Console.WriteLine("Your options: Bedroom, kitchen and living room.");
+            Console.WriteLine("Your options: Bedroom, kitchen, breaker box and living room.");
             Console.WriteLine("Your move?\n");
         },
 
@@ -45,6 +45,17 @@ internal class LocationData
             Console.WriteLine("You went to the balcony. Nothing really to see here, just a beautiful sky you can't see cause it's dark.");
             Console.WriteLine("Your options: Living room");
             Console.WriteLine("Your move?\n");
+        },
+
+        ["breaker box"] = () => {
+            Console.WriteLine("You went to the breaker box. You see a live and neutral wire just hanging from the ceiling, pretty unsafe if you ask me.\nClearly the house is powered, so it's best not to touch it. You don't want to recreate an ElectroBOOM video.");
+            Console.WriteLine("Your options: Hallway (or the hospital if you're not careful)");
+            Console.WriteLine("Your move?\n");
+        },
+
+        ["hospital"] = () => {
+            Console.WriteLine("You touched the fucking live and neutral wires didn't you? You complete dumbass, idiot. Holding the live and neutral\nwires while they're powered connects you to ground and completes a circuit through\nyour body, 240 volts goes through your body. Unfortunately, the house had no GFCI protection, so you die, burned to a\ncrisp with shit in your pants. What a MESSY situation.....MESSY situatio-");
+            Console.WriteLine("Would you like to try again and hopefully be reborn as an intellectual person? Type 'retry' to retry\n");
         },
 
     };
