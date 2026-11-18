@@ -52,7 +52,9 @@
     <Compile Include="Opdrachten\Opdracht 6.cs" />
     <Compile Include="Opdrachten\Opdracht 7.cs" />
     <Compile Include="Opdrachten\Opdracht 8.cs" />
+    <Compile Include="Opdrachten\Opdracht 9.cs" />
     <Compile Include="Opdrachten\Player.cs" />
+    <Compile Include="Opdrachten\Weapons.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
