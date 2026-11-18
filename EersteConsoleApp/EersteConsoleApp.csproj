@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Opdrachten\LocationData.cs" />
     <Compile Include="Opdrachten\Opdracht 1.cs" />
     <Compile Include="Opdrachten\Opdracht 2.cs" />
     <Compile Include="Opdrachten\Opdracht 3.cs" />

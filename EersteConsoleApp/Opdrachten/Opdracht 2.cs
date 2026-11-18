@@ -16,45 +16,10 @@ internal class Opdracht_2
         while (running)
         {
 
-            if (currentLocation == "none")
-            {
-                Console.WriteLine("You're in a dark house, you have to reach the bathroom to take a huge 'ish.");
-                Console.WriteLine("Your options: Hallway.");
-                Console.WriteLine("Your move?");
-            }
-
-            if (currentLocation == "hallway")
-            {
-                Console.WriteLine("Now you're in the hallway.");
-                Console.WriteLine("Your options: Bedroom, kitchen and living room.");
-                Console.WriteLine("Your move?");
-            }
-
-            if (currentLocation == "bedroom")
-            {
-                Console.WriteLine("You went to the bedroom. You got so sleepy, you fell asleep onto your comfy bed. When you wake up, you're covered in shit.");
-                Console.WriteLine("Would you like to try again? Type 'retry' to retry");
-            }
-
-            if (currentLocation == "kitchen")
-            {
-                Console.WriteLine("You went to the kitchen. You notice a delicious looking apple pie on the counter. You can't help but indulge. After you devour that thing like a fat fuck, you remebered what you were really looking for...but it was too late...");
-                Console.WriteLine("Would you like to try again? Type 'retry' to retry");
-            }
+            LocationData.locationData[currentLocation]();
 
             if (currentLocation == "bathroom")
-            {
-                Console.WriteLine("You get to the bathroom and take the most satisfying, heart throbbing, absolute biggest shit known to mankind. It's like you're shitting softballs right out of your asshole. You eat the apple pie that was on the counter in the kitchen, and you shit more, at this point you could package them up and sell them in a six pack. You run out of toilet paper, so you use the house owner's loofa, you stick it in your ass and you look like a little bunny rabbit just making little rabbit turds. At this point, the owner better install a brace bar for the toilet from the ceiling down, like a rollercoaster so you can hold onto it.");
-                Console.WriteLine("Congrats you won!");
                 break;
-            }
-
-            if (currentLocation == "living room")
-            {
-                Console.WriteLine("You went to the living room");
-                Console.WriteLine("Your options: Bathroom");
-                Console.WriteLine("Your move?");
-            }
 
             string currentMove = Console.ReadLine().ToLower();
 
@@ -79,35 +44,34 @@ internal class Opdracht_2
                 continue;
             }
 
-            foreach (KeyValuePair<string, (bool willLose, string neededLocation)> location in locations)
+            // Check if location exists & is the right location & if you lose
+
+            if (locations.TryGetValue(currentMove, out (bool willLose, string[] neededLocations) data))
             {
-                if (location.Key == currentMove)
+                if (!data.neededLocations.Contains(currentLocation))
                 {
-                    if (location.Value.neededLocation != "any" && location.Value.neededLocation != currentLocation)
-                    {
-                        Console.WriteLine("You can't do that. Please try a new command!");
-                        continue;
-                    }
-
-                    currentLocation = currentMove;
-
-                    if (location.Value.willLose)
-                    {
-                        lost = true;
-                    }
-                    break;
+                    Console.WriteLine("You can't do that. Please try a new command!");
+                    continue;
                 }
+            }
+
+            currentLocation = currentMove;
+
+            if (locations[currentMove].willLose)
+            {
+                lost = true;
             }
         }
     }
 
-    private Dictionary<string, (bool willLose, string neededLocation)> locations = new Dictionary<string, (bool, string)>
+    private Dictionary<string, (bool willLose, string[] neededLocations)> locations = new Dictionary<string, (bool, string[])>
     {
-        ["hallway"] = (false, "any"),
-        ["bedroom"] = (true, "hallway"),
-        ["kitchen"] = (true, "hallway"),
-        ["living room"] = (false, "hallway"),
-        ["bathroom"] = (false, "living room"),
+        ["hallway"] = (false, new[] { "living room", "none" }),
+        ["bedroom"] = (true, new[] { "hallway" }),
+        ["kitchen"] = (true, new[] { "hallway" }),
+        ["living room"] = (false, new[] { "hallway", "balcony" }),
+        ["balcony"] = (false, new[] { "living room" }),
+        ["bathroom"] = (false, new[] { "living room" }),
     };
 
     bool CheckValidLocation(string location) => locations.ContainsKey(location);

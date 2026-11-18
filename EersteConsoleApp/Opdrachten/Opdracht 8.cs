@@ -21,5 +21,4 @@ internal class Opdracht_8
         }
 
     }
-
 }
