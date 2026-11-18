@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Opdrachten\LocationData.cs" />
     <Compile Include="Opdrachten\Opdracht 1.cs" />
+    <Compile Include="Opdrachten\Opdracht 10.cs" />
     <Compile Include="Opdrachten\Opdracht 2.cs" />
     <Compile Include="Opdrachten\Opdracht 3.cs" />
     <Compile Include="Opdrachten\Opdracht 4.cs" />
