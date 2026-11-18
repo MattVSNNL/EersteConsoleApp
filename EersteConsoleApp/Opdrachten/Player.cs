@@ -19,6 +19,6 @@ internal class Player
 
     public void ShowStats()
     {
-        Console.WriteLine($"Naam: {this._name}\nLevel: {this._level}\nLives: {this._lives}\n");
+        Console.WriteLine($"Naam: {_name}\nLevel: {_level}\nLives: {_lives}\n");
     }
 }
