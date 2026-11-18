@@ -8,6 +8,11 @@ internal class Opdracht_8
 {
     public void Start()
     {
+        
+    }
+
+    private class Player
+    {
 
     }
 }

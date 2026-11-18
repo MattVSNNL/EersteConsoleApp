@@ -57,10 +57,7 @@ internal class Opdracht_4
         return age;
     }
 
-    private bool isOverEighteen(int age)
-    {
-        return age >= 18;
-    }
+    private bool isOverEighteen(int age) => age >= 18;
 
     private void PrintAgeCategory(int age)
     {
