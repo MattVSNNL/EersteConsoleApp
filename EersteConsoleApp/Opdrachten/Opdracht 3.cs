@@ -15,9 +15,9 @@ internal class Opdracht_3
         {
             Console.WriteLine("Wat voor weer is het?");
             Console.WriteLine("Opties: Zonnig, bewolkt of regent");
-            string weer = Console.ReadLine().ToLower();
+            string Weer = Console.ReadLine().ToLower();
 
-            if (!IsValidWeather(weer))
+            if (!IsValidWeather(Weer))
             {
                 Console.Clear();
                 Console.WriteLine("Deze weer bestaat niet");
@@ -25,7 +25,7 @@ internal class Opdracht_3
                 return;
             }
 
-            chosenWeather = weer;
+            chosenWeather = Weer;
         }
 
         Console.WriteLine("Wat is de temperatuur buiten?");

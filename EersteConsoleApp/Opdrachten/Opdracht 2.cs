@@ -9,10 +9,11 @@ internal class Opdracht_2
 
     public void Start()
     {
+        bool running = true;
         string currentLocation = "none";
         bool lost = false;
 
-        while (true)
+        while (running)
         {
 
             if (currentLocation == "none")
@@ -57,7 +58,7 @@ internal class Opdracht_2
 
             string currentMove = Console.ReadLine().ToLower();
 
-            if (!checkValidLocation(currentMove))
+            if (!CheckValidLocation(currentMove))
             {
 
                 if (currentMove == "retry" && lost)
@@ -109,5 +110,5 @@ internal class Opdracht_2
         ["bathroom"] = (false, "living room"),
     };
 
-    bool checkValidLocation(string location) => locations.ContainsKey(location);
+    bool CheckValidLocation(string location) => locations.ContainsKey(location);
 }

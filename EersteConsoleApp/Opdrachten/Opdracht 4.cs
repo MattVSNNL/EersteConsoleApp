@@ -24,7 +24,7 @@ internal class Opdracht_4
 
             Console.WriteLine($"You're {age} years old.");
 
-            if (isOverEighteen(age))
+            if (IsOverEighteen(age))
             {
                 Console.WriteLine("You can legally vote");
             }
@@ -57,11 +57,11 @@ internal class Opdracht_4
         return age;
     }
 
-    private bool isOverEighteen(int age) => age >= 18;
+    private bool IsOverEighteen(int age) => age >= 18;
 
     private void PrintAgeCategory(int age)
     {
-        bool adult = isOverEighteen(age);
+        bool adult = IsOverEighteen(age);
 
         if (adult && age < 30)
         {

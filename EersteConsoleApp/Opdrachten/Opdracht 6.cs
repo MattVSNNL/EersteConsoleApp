@@ -35,7 +35,8 @@ internal class Opdracht_6
 
         Console.WriteLine("\nOkay, I got a number. Guess!");
 
-        while (true)
+        bool running = true;
+        while (running)
         {
 
             string guessedNumberStr = Console.ReadLine();

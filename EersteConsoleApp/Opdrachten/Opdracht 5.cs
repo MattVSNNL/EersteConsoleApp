@@ -11,9 +11,8 @@ internal class Opdracht_5
         Console.WriteLine("What table do you want?");
 
         string tableStr = Console.ReadLine();
-        int table;
 
-        if (!int.TryParse(tableStr, out table))
+        if (!int.TryParse(tableStr, out int table))
         {
             Console.Clear();
             Console.WriteLine("Not a valid number. Please try again.");
