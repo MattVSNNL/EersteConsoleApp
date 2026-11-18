@@ -22,23 +22,4 @@ internal class Opdracht_8
 
     }
 
-    private class Player
-    {
-        private string _name;
-        private int _level;
-        private int _lives;
-
-        public Player(string name, int level, int lives)
-        {
-            this._name = name;
-            this._level = level;
-            this._lives = lives;
-        }
-
-        public void ShowStats()
-        {
-            Console.WriteLine($"Naam: {this._name}\nLevel: {this._level}\nLives: {this._lives}\n");
-        }
-
-    }
 }
