@@ -21,6 +21,7 @@ internal class Opdracht_10
             Console.WriteLine("Please write any word you want.");
 
             // Trim white space incase of palindrome words that have spaces in them, like "race car".
+            // Also trim punctuation for palindrome sentences like "Madam, I'm Adam"
             string word = Console.ReadLine().ToLower();
             word = String.Concat(word.Where(c => Char.IsLetterOrDigit(c)));
 
