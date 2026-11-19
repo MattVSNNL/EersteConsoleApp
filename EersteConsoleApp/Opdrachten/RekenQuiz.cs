@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 internal class RekenQuiz
 {
 
-    float _num1;
-    float _num2;
-    string _op;
+    private float _num1;
+    private float _num2;
+    private string _op;
 
     public RekenQuiz(float num1, float num2, string op)
     {
