@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Opdrachten\Hangman.cs" />
     <Compile Include="Opdrachten\LocationData.cs" />
     <Compile Include="Opdrachten\Opdracht 1.cs" />
     <Compile Include="Opdrachten\Opdracht 10.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="Opdrachten\Player.cs" />
     <Compile Include="Opdrachten\RekenQuiz.cs" />
     <Compile Include="Opdrachten\Weapons.cs" />
+    <Compile Include="Opdrachten\Words.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
