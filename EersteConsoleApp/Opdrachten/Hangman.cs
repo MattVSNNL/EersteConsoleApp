@@ -36,7 +36,7 @@ internal class Hangman
         Words word = new Words();
         string randomWord = word.words[rng.Next(word.words.Count)];
 
-        Console.WriteLine("Alright! A word is picked. Begin!");
+        Console.WriteLine("\nAlright! A word is picked. Begin!");
 
         while (running)
         {

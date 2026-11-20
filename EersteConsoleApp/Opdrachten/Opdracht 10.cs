@@ -24,6 +24,7 @@ internal class Opdracht_10
             // Also trim punctuation for palindrome sentences like "Madam, I'm Adam"
             string word = Console.ReadLine().ToLower();
             word = String.Concat(word.Where(c => Char.IsLetterOrDigit(c)));
+            // Console.WriteLine(word);
 
             if (word == "")
             {
