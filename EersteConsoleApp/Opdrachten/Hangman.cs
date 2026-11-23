@@ -67,13 +67,7 @@ internal class Hangman
                 continue;
             }
 
-            if (guessedLetters.Contains(plrLetter))
-            {
-                Console.WriteLine("You already guessed this letter.");
-                continue;
-            }
-
-            if (rightLetters.Contains(plrLetter))
+            if (guessedLetters.Contains(plrLetter) || rightLetters.Contains(plrLetter))
             {
                 Console.WriteLine("You already guessed this letter.");
                 continue;
@@ -88,7 +82,6 @@ internal class Hangman
             }
 
             Console.WriteLine("Right!");
-            //guessedLetters.Add(plrLetter);
             rightLetters.Add(plrLetter);
         }
         
