@@ -73,6 +73,12 @@ internal class Hangman
                 continue;
             }
 
+            if (rightLetters.Contains(plrLetter))
+            {
+                Console.WriteLine("You already guessed this letter.");
+                continue;
+            }
+
             if (!randomWord.ToLower().Contains(plrLetter))
             {
                 Console.WriteLine("Nope!");
@@ -82,7 +88,7 @@ internal class Hangman
             }
 
             Console.WriteLine("Right!");
-            guessedLetters.Add(plrLetter);
+            //guessedLetters.Add(plrLetter);
             rightLetters.Add(plrLetter);
         }
         
