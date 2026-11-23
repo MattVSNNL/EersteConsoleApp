@@ -229,7 +229,4 @@ internal class Words
         "wrist", "write", "wrong", "wrote", "yield", "young",
         "youth", "zebra"
     };
-
-    Random rng = new Random();
-    public string GetRandomWord() => words[rng.Next(words.Count)];
 }
