@@ -24,9 +24,8 @@ internal class Opdracht_10
             // Also trim punctuation for palindrome sentences like "Madam, I'm Adam"
             string word = Console.ReadLine();
             word = String.Concat(word.Where(c => Char.IsLetterOrDigit(c)));
-            Console.WriteLine($"Reversed: {ReversedWord(word)}");
 
-            if (word == "")
+            if (string.IsNullOrEmpty(word))
             {
                 Console.WriteLine("Please write a word.");
                 continue;
@@ -38,6 +37,7 @@ internal class Opdracht_10
                 continue;
             }
 
+            Console.WriteLine($"Reversed: {ReversedWord(word)}");
             Console.WriteLine("Yes, This word is a palindrome. You want to try another?\n");
         }
     }
