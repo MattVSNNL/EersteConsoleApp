@@ -58,6 +58,7 @@
     <Compile Include="Opdrachten\Opdracht 9.cs" />
     <Compile Include="Opdrachten\Player.cs" />
     <Compile Include="Opdrachten\RekenQuiz.cs" />
+    <Compile Include="Opdrachten\test code cause I%27m forced to.cs" />
     <Compile Include="Opdrachten\Weapons.cs" />
     <Compile Include="Opdrachten\Words.cs" />
     <Compile Include="Program.cs" />

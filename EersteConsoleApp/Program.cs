@@ -10,7 +10,7 @@ namespace EersteConsoleApp
     {
         static void Main(string[] args)
         {
-            new Hangman().Start();
+            new Opdracht_10().Start();
         }
     }
 }

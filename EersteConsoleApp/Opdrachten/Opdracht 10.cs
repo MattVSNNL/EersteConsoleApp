@@ -22,9 +22,9 @@ internal class Opdracht_10
 
             // Trim white space incase of palindrome words that have spaces in them, like "race car".
             // Also trim punctuation for palindrome sentences like "Madam, I'm Adam"
-            string word = Console.ReadLine().ToLower();
+            string word = Console.ReadLine();
             word = String.Concat(word.Where(c => Char.IsLetterOrDigit(c)));
-            // Console.WriteLine(word);
+            Console.WriteLine($"Reversed: {ReversedWord(word)}");
 
             if (word == "")
             {
@@ -32,7 +32,7 @@ internal class Opdracht_10
                 continue;
             }
 
-            if (ReversedWord(word) != word)
+            if (ReversedWord(word).ToLower() != word.ToLower())
             {
                 Console.WriteLine("No, this word isn't a palindrome. Try another word!\n");
                 continue;
@@ -44,8 +44,17 @@ internal class Opdracht_10
 
     private string ReversedWord(string text)
     {
-        char[] charArray = text.ToCharArray();
+
+        char[] charArray = text.ToLower().ToCharArray();
         Array.Reverse(charArray);
+
+        for (int i = 0; i < text.Length; i++)
+        {
+            if (char.IsUpper(text[i]))
+            {
+                charArray[i] = char.ToUpper(charArray[i]);
+            }
+        }
 
         return new string(charArray);
     }
