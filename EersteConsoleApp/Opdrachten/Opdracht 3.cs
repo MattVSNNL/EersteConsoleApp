@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 internal class Opdracht_3
 {
     string chosenWeather;
+    string[] weren = { "regent", "zonnig", "bewolkt" };
 
     public void Start()
     {
@@ -80,8 +81,6 @@ internal class Opdracht_3
             }
         }
     }
-
-    string[] weren = {"regent", "zonnig", "bewolkt"};
 
     private bool IsValidWeather(string weer)
     {

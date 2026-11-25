@@ -6,6 +6,23 @@ using System.Threading.Tasks;
 
 internal class Opdracht_11
 {
+    private Random rng = new Random();
+    private string[] operators = { "+", "-", "*", "/" };
+
+    public struct questionStructure
+    {
+        public float num1;
+        public float num2;
+        public string op;
+
+        public questionStructure(float _num1, float _num2, string _op)
+        {
+            num1 = _num1;
+            num2 = _num2;
+            op = _op;
+        }
+    }
+
     public void Start()
     {
         Console.WriteLine("Are you ready to start!? Type 'ready' when you're ready.");
@@ -26,11 +43,11 @@ internal class Opdracht_11
                 string op = PickOperator();
 
                 RekenQuiz newQuestion = new RekenQuiz(num1, num2, op);
-                (float num1, float num2, string op) generatedQuestion = newQuestion.GenerateQuestion();
+                questionStructure generatedQuestion = newQuestion.GenerateQuestion();
 
                 Console.WriteLine($"\nWhat is {generatedQuestion.num1} {generatedQuestion.op} {generatedQuestion.num2}?");
                 Console.WriteLine("(If a number is a decimal, please round to two decimals)");
-                
+
                 waiting = true;
 
                 while (waiting)
@@ -72,9 +89,14 @@ internal class Opdracht_11
 
     }
 
-    private Random rng = new Random();
-    private string[] operators = { "+", "-", "*", "/" };
+    private float GenerateNumber()
+    {
+        return rng.Next(1, 10 + 1); // + 1 so we can count 10 too
+    }
 
-    private float GenerateNumber() => rng.Next(1, 10 + 1); // + 1 so we can count 10 too
-    private string PickOperator() => operators[rng.Next(operators.Length)];
+    private string PickOperator()
+    {
+        return operators[rng.Next(operators.Length)];
+    }
+
 }

@@ -76,5 +76,8 @@ internal class Opdracht_2
         ["bathroom"] = (false, new[] { "living room" }),
     };
 
-    bool CheckValidLocation(string location) => locations.ContainsKey(location);
+    bool CheckValidLocation(string location)
+    {
+        return locations.ContainsKey(location);
+    }
 }

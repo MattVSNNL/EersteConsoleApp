@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Opdracht_11;
 
 internal class RekenQuiz
 {
@@ -18,7 +19,7 @@ internal class RekenQuiz
         _op = op;
     }
 
-    public (float num1, float num2, string op) GenerateQuestion() => (_num1, _num2, _op);
+    public questionStructure GenerateQuestion() => new questionStructure(_num1, _num2, _op);
     public bool CheckAnswer(float sentAnswer)
     {
         float answer;

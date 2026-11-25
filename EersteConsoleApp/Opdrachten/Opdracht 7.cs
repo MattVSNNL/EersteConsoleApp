@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 internal class Opdracht_7
 {
 
+    private Random rnd = new Random();
+    private List<int> numbers = new List<int>();
+
     public void Start()
     {
 
@@ -35,8 +38,6 @@ internal class Opdracht_7
         return;
     }
 
-    private Random rnd = new Random();
-    private List<int> numbers = new List<int>();
 
     private void RollDice()
     {

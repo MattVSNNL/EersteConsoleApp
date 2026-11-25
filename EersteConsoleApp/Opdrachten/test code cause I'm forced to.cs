@@ -6,6 +6,27 @@ using System.Threading.Tasks;
 
 internal class test_code_cause_I_m_forced_to
 {
+
+    private List<bool> booleans = new List<bool>()
+    {
+        true,
+        true,
+        false,
+        false
+    };
+
+    private List<int> numbers = new List<int>()
+    {
+        5, 2, 9, 4
+    };
+
+    private List<string> fruits = new List<string>()
+    {
+        "Bananum",
+        "Strawberrum",
+        "Applum"
+    };
+
     public void Start()
     {
         booleans.Reverse();
@@ -31,24 +52,4 @@ internal class test_code_cause_I_m_forced_to
             Console.WriteLine(fruit);
         }
     }
-
-    private List<bool> booleans = new List<bool>()
-    {
-        true,
-        true,
-        false,
-        false
-    };
-
-    private List<int> numbers = new List<int>()
-    {
-        5, 2, 9, 4
-    };
-
-    private List<string> fruits = new List<string>()
-    {
-        "Bananum",
-        "Strawberrum",
-        "Applum"
-    };
 }
