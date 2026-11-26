@@ -7,6 +7,30 @@ using System.Threading.Tasks;
 internal class Opdracht_2
 {
 
+    private Dictionary<string, locationsStructure> locations = new Dictionary<string, locationsStructure>
+    {
+        ["hallway"] = new locationsStructure(false, new[] { "living room", "breaker box", "none" }),
+        ["bedroom"] = new locationsStructure(true, new[] { "hallway" }),
+        ["kitchen"] = new locationsStructure(true, new[] { "hallway" }),
+        ["living room"] = new locationsStructure(false, new[] { "hallway", "balcony" }),
+        ["breaker box"] = new locationsStructure(false, new[] { "hallway" }),
+        ["hospital"] = new locationsStructure(true, new[] { "breaker box" }),
+        ["balcony"] = new locationsStructure(false, new[] { "living room" }),
+        ["bathroom"] = new locationsStructure(false, new[] { "living room" }),
+    };
+
+    public struct locationsStructure
+    {
+        public bool willLose;
+        public string[] neededLocations;
+
+        public locationsStructure(bool _willLose, string[] _neededLocations)
+        {
+            willLose = _willLose;
+            neededLocations = _neededLocations;
+        }
+    }
+
     public void Start()
     {
         bool running = true;
@@ -46,7 +70,7 @@ internal class Opdracht_2
 
             // Check if location exists & is the right location & if you lose
 
-            if (locations.TryGetValue(currentMove, out (bool willLose, string[] neededLocations) data))
+            if (locations.TryGetValue(currentMove, out locationsStructure data))
             {
                 if (!data.neededLocations.Contains(currentLocation))
                 {
@@ -63,18 +87,6 @@ internal class Opdracht_2
             }
         }
     }
-
-    private Dictionary<string, (bool willLose, string[] neededLocations)> locations = new Dictionary<string, (bool, string[])>
-    {
-        ["hallway"] = (false, new[] { "living room", "breaker box", "none" }),
-        ["bedroom"] = (true, new[] { "hallway" }),
-        ["kitchen"] = (true, new[] { "hallway" }),
-        ["living room"] = (false, new[] { "hallway", "balcony" }),
-        ["breaker box"] = (false, new[] { "hallway" }),
-        ["hospital"] = (true, new[] { "breaker box" }),
-        ["balcony"] = (false, new[] { "living room" }),
-        ["bathroom"] = (false, new[] { "living room" }),
-    };
 
     bool CheckValidLocation(string location)
     {
