@@ -68,6 +68,17 @@ internal class Opdracht_2
                 continue;
             }
 
+            // Check if location exists & is the right location & if you lose
+
+            if (locations.TryGetValue(currentMove, out locationsStructure data))
+            {
+                if (!data.neededLocations.Contains(currentLocation))
+                {
+                    Console.WriteLine("You can't do that. Please try a new command!");
+                    continue;
+                }
+            }
+
             currentLocation = currentMove;
 
             if (locations[currentMove].willLose)
