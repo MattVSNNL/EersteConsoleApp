@@ -40,9 +40,8 @@ internal class Opdracht_6
         {
 
             string guessedNumberStr = Console.ReadLine();
-            int guessedNumber;
 
-            if (!int.TryParse(guessedNumberStr, out guessedNumber))
+            if (!int.TryParse(guessedNumberStr, out int guessedNumber))
             {
                 Console.WriteLine("Not a valid number. Please try again.\n");
                 continue;
