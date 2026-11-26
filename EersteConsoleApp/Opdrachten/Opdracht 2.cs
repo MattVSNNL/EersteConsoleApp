@@ -69,7 +69,6 @@ internal class Opdracht_2
             }
 
             // Check if location exists & is the right location & if you lose
-
             if (locations.TryGetValue(currentMove, out locationsStructure data))
             {
                 if (!data.neededLocations.Contains(currentLocation))
